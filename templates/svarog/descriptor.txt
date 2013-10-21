@@ -1,0 +1,4 @@
+thumbnail: thumbnail.png
+title: Svarog
+description: Svarog
+credits: Svarog

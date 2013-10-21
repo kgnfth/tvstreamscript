@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Floating List Header - Changelog</title>
+<link rel="stylesheet" href="http://www.teamdf.com/jquery-plugins/resources/stylesheets/docs.css"/>
+</head>
+
+<body>
+	<!-- Documentation about a plugin -->
+	<h1>Calendar</h1>
+	<author><a href="http://www.teamdf.com/about/">Sam Sehnert, Phil Taylor</a></author>
+	<version>1.2.1</version>
+	
+	<dl>
+		<dt>Version 1.2.1</dt>
+		<dd>Fixed the destory method for new wrapper method</dd>
+		<dd>Improved automated styles (including removing styles in destroy)</dd>
+		<dd>Added support for elements using max-height css property.</dd>
+		
+		<dt>Version 1.2.0</dt>
+		<dd>Added ability to define scrolltarget element. Plugin watches for scrolling on this element, and positions header based on scroll level.</dd>
+		<dd>Added ability to set animation easing and completion function for scrollTo method.</dd>
+		<dd>Fixed triggering of headingChange method so that it would trigger even when reversing mid scroll.</dd>
+		<dd>Fixed styling to pick up computed style of header element.</dd>
+		<dd>Changed plugin wrapper method. Now wraps list items for scrolling, and adds list header under original list, outside wrapper.</dd>
+		
+		<dt>Version 1.1.2</dt>
+		<dd>Added scrollTo method for automatically scrolling to a given heading index.</dd>
+		
+		<dt>Version 1.1.1</dt>
+		<dd>Updated unload script so destroying plugin and restoring DOM is possible.</dd>
+		
+		<dt>Version 1.1.0</dt>
+		<dd>Added headingChange event, triggers when the calendars heading changes from one to another.</dd>
+		<dd>Added plugin log method for debugging information.</dd>
+		<dd>Improved code commenting and documentation.</dd>
+		<dd>Updated version method to return VID if required (numeric version number).</dd>
+		
+		<dt>Version 1.0.0</dt>
+		<dd>Implemented basic plugin functionality.</dd>
+	</dl>
+</body>
+</html>

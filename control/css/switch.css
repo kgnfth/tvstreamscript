@@ -1,0 +1,32 @@
+/* Container */
+.switch {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 105px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+/* Background image */
+.switch .background {
+  background: url('../img/switch-background.png');
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 161px;
+  height: 30px;
+}
+
+/* Mask */
+.switch .mask {
+  background: url('../img/switch-mask.png');
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105px;
+  height: 30px;
+}

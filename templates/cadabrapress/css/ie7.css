@@ -1,0 +1,19 @@
+	.downarrowclass {
+ 	padding:0;
+	}
+ 	
+	.rightarrowclass {
+ 	padding:0;
+ 	}
+ 
+ .headings img { clear:both; display:block;}
+ 
+ 	.jcarousel-clip {
+float:left; display:block;
+	   }
+	   
+	   #menu {
+	   display:block; 
+	   clear:both;
+	   margin-bottom:50px;
+	   }

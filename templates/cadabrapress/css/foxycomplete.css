@@ -1,0 +1,61 @@
+/* CSS Document */
+.ac_results{
+    overflow:hidden;
+    z-index:99999;
+    margin:0;
+    padding:0;
+    background-color: #ffffff;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-left: 0px;
+    margin-top: -2px;
+    border: 1px solid #C7C7C7;
+    text-align:left;
+    width: 216px !important;
+    color: #444444 !important;
+}
+
+.ac_results ul{
+    list-style-position:outside;
+    list-style:none;
+    background-color: #ffffff;
+    margin:0;
+    padding: 3px 3px 3px 3px;
+}
+.ac_results li{
+    cursor:pointer;
+    display:block;
+    overflow:auto;
+    margin:0;
+    padding:0;
+    border: 0px;
+}
+
+.ac_loading{ }
+
+.ac_over{
+    background-color:#FF8A00;
+}
+
+.ac_results li a{
+    display:block; 
+    overflow:auto; 
+    padding:5px; 
+    color:#444444;
+}
+
+.ac_results li:hover a, .ac_over a {
+    color: #ffffff !important;    
+}
+
+.ac_results li a img{
+    width:40px; 
+    height:auto; 
+    max-height:50px;
+    float:left; 
+    margin-right:10px;
+}

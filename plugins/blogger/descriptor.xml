@@ -1,0 +1,48 @@
+<plugin>
+	<name>Blogger plugin</name>
+	<description></description>
+	<installUrl>install.php</installUrl>
+    <uninstallUrl>uninstall.php</uninstallUrl>
+	<author>TVstreamScript</author>
+	<authorUrl>http://tvss.co</authorUrl>
+    <paths>
+        <backEnd>
+            <path>
+                <mainMenuUrl>blogger</mainMenuUrl>
+                <mainMenuTitle>Blogger</mainMenuTitle>
+                <mainMenuIcon>icon-edit</mainMenuIcon>
+                <subMenuTitle>Configuration</subMenuTitle>
+                <subMenuUrl>blogger_config</subMenuUrl>
+            </path>
+            <path>
+                <mainMenuUrl>blogger</mainMenuUrl>
+                <mainMenuTitle>Blogger</mainMenuTitle>
+                <mainMenuIcon>icon-edit</mainMenuIcon>
+                <subMenuTitle>Write post</subMenuTitle>
+                <subMenuUrl>blogger_write</subMenuUrl>
+            </path>
+            <path>
+                <mainMenuUrl>blogger</mainMenuUrl>
+                <mainMenuTitle>Blogger</mainMenuTitle>
+                <mainMenuIcon>icon-edit</mainMenuIcon>
+                <subMenuTitle>Manage posts</subMenuTitle>
+                <subMenuUrl>blogger_manage</subMenuUrl>
+            </path>
+            <path>
+                <mainMenuUrl>blogger</mainMenuUrl>
+                <mainMenuTitle>Blogger</mainMenuTitle>
+                <mainMenuIcon>icon-edit</mainMenuIcon>
+                <subMenuTitle>Feeds</subMenuTitle>
+                <subMenuUrl>blogger_feeds</subMenuUrl>
+            </path>
+        </backEnd>
+        <frontEnd>
+            <path>
+                <mainMenuUrl>/blog</mainMenuUrl>
+                <mainMenuTitle>Blog</mainMenuTitle>
+                <subMenuUrl>/blog</subMenuUrl>
+				<subMenuTitle>Blog</subMenuTitle>
+            </path>
+        </frontEnd>
+    </paths>    
+</plugin>

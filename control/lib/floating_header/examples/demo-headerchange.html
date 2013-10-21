@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery List - headerChange Demo</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.teamdf.com/jquery-plugins/resources/javascripts/prettify.js"></script>
+		<script type="text/javascript" src="../jquery.list.js"></script>
+		
+		<script type="text/javascript">
+			
+			$(function(){
+				$('pre.prettyprint').text(
+					prepareList.toString()
+						.replace(/\t\t\t\t/g,'')
+						.replace(/\t/g,'    ')
+						.replace('function prepareList() {\n','')
+						.replace(/^\s/, '' )
+						.replace(/\s+}\s?$/,'')
+					);
+				
+				// Pretty print code blocks.
+				prettyPrint();
+				prepareList();
+			});
+			
+			function prepareList() {
+				
+				var $buttons = $('#buttons'),
+					$countries = $('#countries');
+								
+				// Generate the list of buttons for the scrollto links.
+				$('dt',$countries).each(function(i){
+					
+					// Create the new button element for this header.
+					$buttons.append('<button data-header="'+i+'">'+$(this).text()+'</button>');
+				});
+				
+				// Add the < > buttons and then add inactive class to the first two buttons (< and the first header).
+				$buttons.prepend('<button data-header="0">&lt;</button>')
+						.append('<button data-header="1">&gt</button>')
+						.find('button:lt(2)')
+							.addClass('inactive');
+												
+				// Initialise the list.
+				$('#countries').list().bind('headingChange',function(ele,index,$header,max){
+					
+					// Remove the inactive class, and add to the newly selected header.	
+					$('button',$buttons)
+						.removeClass('inactive')
+						.eq(index+1)
+							.addClass('inactive');
+					
+					// Set the new next and previous index to the < and > buttons.
+					$('button:first',$buttons).attr('data-header',index-1);
+					$('button:last',$buttons).attr('data-header',index+1);
+					
+					// Grey out the first and last elments if we can't proceed in that direction any further.
+					if( index == 0 )	$buttons.find('button:first').addClass('inactive');					
+					if( max == true )	$buttons.find('button:gt('+(index+1)+')').addClass('inactive');
+				});
+				
+				// Add an event handler 
+				$('button',$buttons).live('click', function(){
+					
+					// Scroll to the 
+					$('#countries').list( 'scrollTo', $(this).attr('data-header'), 'fast', 'swing' );
+				});
+			}
+			
+		</script>
+		
+		<link rel="stylesheet" href="http://www.teamdf.com/jquery-plugins/resources/stylesheets/prettify.css" type="text/css" />
+		
+		<style>
+			body{
+				font-family: sans-serif;
+			}
+			pre.prettyprint{
+				padding: 10px;
+				font-family: monospace;
+				font-size: 9pt;
+				background: #f8f8f8;
+				border: 1px solid #e4e4e4;
+			}	
+			#countries{
+				border: 1px solid #2683BD;
+				height: 350px;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				position: relative;
+				font-family: sans-serif;
+				font-size: 1em;
+			}
+			#countries dt{
+				margin: 0;
+				background: #2683BD url(http://www.teamdf.com/jquery-plugins/resources/images/overlay-sprite.png) repeat-x 0 -50px;
+				font-weight: bold;
+				text-shadow: -1px -1px 0px rgba( 0, 0, 0, 0.2 ), 1px 1px 0px rgba( 255, 255, 255, 0.3 );
+				color: white;
+				padding: 8px 5px;
+				border-bottom: 1px solid #1D6FA2;
+			}
+			#countries dd{
+				padding: 5px;
+				margin: 0;
+				border-bottom: 1px solid #F2F6FB;
+				font-size: 0.8em;
+				color: #2A5673;
+			}
+			button{
+				border: 1px solid #64A1C8;
+				background: #2683BD url(http://www.teamdf.com/jquery-plugins/resources/images/overlay-sprite.png) repeat-x 0 -62px;
+				font-weight: bold;
+				text-shadow: -1px -1px 0px rgba( 0, 0, 0, 0.2 ), 1px 1px 0px rgba( 255, 255, 255, 0.3 );
+				color: rgba( 255, 255, 255, 0.95 );
+				padding: 3px 8px;
+				margin: -3px 0px;
+				float: right;
+				border-radius: 5px;
+				font-size: 0.85em;
+				cursor: pointer;
+			}
+			button:hover{
+				color: white;
+				background-color: #1D6FA2;
+			}
+			#buttons {
+				margin: 0 0 5px 0;
+			}
+			#buttons button{
+				float: none;
+				margin: 0 5px 0 0;
+				border-color: #2683BD;
+			}
+			#buttons button.inactive{
+				background-color: #999;
+				border-color: #999;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>jQuery List - headerChange Demo</h1>
+		<a href="../docs/index.html#demos">Back to Docs</a>
+		<p>Similar to the <a href="demo-scrollto.html">ScrollTo</a> Demo, but uses the headerChange event to show which headings you can scroll to.</p>
+		
+		<pre class="prettyprint lang-javascript"><code></code></pre>
+	
+		<div id="buttons"></div>
+		
+		<dl id="countries">
+				
+			<dt>A</dt>
+			<dd>Afghanistan</dd>
+			<dd>Akrotiri</dd>
+			<dd>Albania</dd>
+			<dd>Algeria</dd>
+			<dd>American Samoa</dd>
+			<dd>Andorra</dd>
+			<dd>Angola</dd>
+			<dd>Anguilla</dd>
+			<dd>Antarctica</dd>
+			<dd>Antigua and Barbuda</dd>
+			<dd>Argentina</dd>
+			<dd>Armenia</dd>
+			<dd>Aruba</dd>
+			<dd>Ashmore and Cartier Islands</dd>
+			<dd>Australia</dd>
+			<dd>Austria</dd>
+			<dd>Azerbaijan</dd>
+			
+			<dt>B</dt>
+			<dd>Bahamas, The</dd>
+			<dd>Bahrain</dd>
+			<dd>Bangladesh</dd>
+			<dd>Barbados</dd>
+			<dd>Bassas da India</dd>
+			<dd>Belarus</dd>
+			<dd>Belgium</dd>
+			<dd>Belize</dd>
+			<dd>Benin</dd>
+			<dd>Bermuda</dd>
+			<dd>Bhutan</dd>
+			<dd>Bolivia</dd>
+			<dd>Bosnia and Herzegovina</dd>
+			<dd>Botswana</dd>
+			<dd>Bouvet Island</dd>
+			<dd>Brazil</dd>
+			<dd>British Indian Ocean Territory</dd>
+			<dd>British Virgin Islands</dd>
+			<dd>Brunei</dd>
+			<dd>Bulgaria</dd>
+			<dd>Burkina Faso</dd>
+			<dd>Burma</dd>
+			<dd>Burundi</dd>
+			
+			<dt>C</dt>
+			<dd>Cambodia</dd>
+			<dd>Cameroon</dd>
+			<dd>Canada</dd>
+			<dd>Cape Verde</dd>
+			<dd>Cayman Islands</dd>
+			<dd>Central African Republic</dd>
+			<dd>Chad</dd>
+			<dd>Chile</dd>
+			<dd>China</dd>
+			<dd>Christmas Island</dd>
+			<dd>Clipperton Island</dd>
+			<dd>Cocos (Keeling) Islands</dd>
+			<dd>Colombia</dd>
+			<dd>Comoros</dd>
+			<dd>Congo, Democratic Republic of the</dd>
+			<dd>Congo, Republic of the</dd>
+			<dd>Cook Islands</dd>
+			<dd>Coral Sea Islands</dd>
+			<dd>Costa Rica</dd>
+			<dd>Cote d'Ivoire</dd>
+			<dd>Croatia</dd>
+			<dd>Cuba</dd>
+			<dd>Cyprus</dd>
+			<dd>Czech Republic</dd>
+			
+			<dt>D</dt>
+			<dd>Denmark</dd>
+			<dd>Dhekelia</dd>
+			<dd>Djibouti</dd>
+			<dd>Dominica</dd>
+			<dd>Dominican Republic</dd>
+			
+			<dt>E</dt>
+			<dd>Ecuador</dd>
+			<dd>Egypt</dd>
+			<dd>El Salvador</dd>
+			<dd>Equatorial Guinea</dd>
+			<dd>Eritrea</dd>
+			<dd>Estonia</dd>
+			<dd>Ethiopia</dd>
+			<dd>Europa Island</dd>
+			
+			<dt>F</dt>
+			<dd>Falkland Islands (Islas Malvinas)</dd>
+			<dd>Faroe Islands</dd>
+			<dd>Fiji</dd>
+			<dd>Finland</dd>
+			<dd>France</dd>
+			<dd>French Guiana</dd>
+			<dd>French Polynesia</dd>
+			<dd>French Southern and Antarctic Lands</dd>
+			
+			<dt>G</dt>
+			<dd>Gabon</dd>
+			<dd>Gambia, The</dd>
+			<dd>Gaza Strip</dd>
+			<dd>Georgia</dd>
+			<dd>Germany</dd>
+			<dd>Ghana</dd>
+			<dd>Gibraltar</dd>
+			<dd>Glorioso Islands</dd>
+			<dd>Greece</dd>
+			<dd>Greenland</dd>
+			<dd>Grenada</dd>
+			<dd>Guadeloupe</dd>
+			<dd>Guam</dd>
+			<dd>Guatemala</dd>
+			<dd>Guernsey</dd>
+			<dd>Guinea</dd>
+			<dd>Guinea-Bissau</dd>
+			<dd>Guyana</dd>
+			
+			<dt>H</dt>
+			<dd>Haiti</dd>
+			<dd>Heard Island and McDonald Islands</dd>
+			<dd>Holy See (Vatican City)</dd>
+			<dd>Honduras</dd>
+			<dd>Hong Kong</dd>
+			<dd>Hungary</dd>
+			
+			<dt>I</dt>
+			<dd>Iceland</dd>
+			<dd>India</dd>
+			<dd>Indonesia</dd>
+			<dd>Iran</dd>
+			<dd>Iraq</dd>
+			<dd>Ireland</dd>
+			<dd>Isle of Man</dd>
+			<dd>Israel</dd>
+			<dd>Italy</dd>
+			
+			<dt>J</dt>
+			<dd>Jamaica</dd>
+			<dd>Jan Mayen</dd>
+			<dd>Japan</dd>
+			<dd>Jersey</dd>
+			<dd>Jordan</dd>
+			<dd>Juan de Nova Island</dd>
+			
+			<dt>K</dt>
+			<dd>Kazakhstan</dd>
+			<dd>Kenya</dd>
+			<dd>Kiribati</dd>
+			<dd>Korea, North</dd>
+			<dd>Korea, South</dd>
+			<dd>Kuwait</dd>
+			<dd>Kyrgyzstan</dd>
+			
+			<dt>L</dt>
+			<dd>Laos</dd>
+			<dd>Latvia</dd>
+			<dd>Lebanon</dd>
+		</dl>
+	</body>
+</html>

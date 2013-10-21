@@ -1,0 +1,61 @@
+/* CSS Document */
+.ac_results{
+    overflow:hidden;
+    z-index:99999;
+    margin:0;
+    padding:0;
+    background-color: #ffffff;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: -130px;
+    margin-top: 0px;
+}
+
+.ac_results ul{
+    list-style-position:outside;
+    list-style:none;
+    background-color: #ffffff;
+    margin:0;
+    padding: 3px 3px 3px 3px;
+}
+.ac_results li{
+    cursor:pointer;
+    display:block;
+    overflow:auto;
+    margin:0;
+    padding:0;
+    border: 0px;
+}
+
+.ac_loading{ }
+
+.ac_over{
+    background-color:#222222;
+    color: #ffffff;
+}
+
+.ac_over a:hover{
+    color:#ffffff;
+}
+.ac_results li a{
+    display:block; 
+    overflow:auto; 
+    padding:5px; 
+    color:#222222;
+}
+
+.ac_results li:hover a, .ac_over a {
+    color: #ffffff !important;    
+}
+
+.ac_results li a img{
+    width:40px; 
+    height:auto; 
+    max-height:60px;
+    float:left; 
+    margin-right:15px;
+}

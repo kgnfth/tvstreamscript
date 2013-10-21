@@ -1,0 +1,4 @@
+thumbnail: thumbnail.png
+title: CadabraPress
+description: CadabraPress is a revolutionary WPZOOM theme, offering users a professional and elegant display of articles and full control over theme features.
+credits: Originally designed by <a href="http://wpzoom.com/" target="_blank">wpzoom.com</a>, modified for TVstreamScript by <a href="http://twitter.com/le_punk" target="_blank">@le_punk</a>

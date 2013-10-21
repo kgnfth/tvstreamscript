@@ -1,0 +1,17 @@
+$license_key = "[[LICENSE_KEY]]";
+
+$dbhost = "[[DBHOST]]";
+$dbuser = "[[DBUSER]]";
+$dbpass = "[[DBPASS]]";
+$dbname = "[[DATABASE]]";
+ 
+$baseurl = "[[BASEURL]]";
+$basepath = "[[BASEPATH]]";
+$sitename = "[[SITENAME]]";
+
+$siteslogan = "";
+ 
+mysql_connect($dbhost,$dbuser,$dbpass); mysql_select_db($dbname);
+ 
+mysql_query("SET NAMES 'utf8'");
+mysql_set_charset('utf8'); 

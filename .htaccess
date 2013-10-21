@@ -1,0 +1,99 @@
+Options -Multiviews
+RewriteEngine On
+
+RewriteRule ^/?blog$        index.php?menu=plugin&plugin=blogger&plugin_menu=blog [L]
+RewriteRule ^/?blog/page/([0-9\-]+)$        index.php?menu=plugin&plugin=blogger&plugin_menu=blog&blog_page=$1 [L]
+RewriteRule ^/?blog/tag/([a-zA-Z0-9\-]+)$ index.php?menu=plugin&plugin=blogger&plugin_menu=blog_tag&perma=$1 [L]
+RewriteRule ^/?blog/tag/([a-zA-Z0-9\-]+)/page/([0-9]+)$ index.php?menu=plugin&plugin=blogger&plugin_menu=blog_tag&perma=$1&blog_page=$2 [L]
+RewriteRule ^/?blog/([a-zA-Z0-9\-]+)$ index.php?menu=plugin&plugin=blogger&plugin_menu=blog_post&perma=$1 [L]
+
+##################
+# english routes #
+##################
+
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)/date/(\d+) index.php?menu=movie-tag&tag=$1&sortby=date&p=$2&lang=en [L]
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)/date index.php?menu=movie-tag&tag=$1&sortby=date&lang=en [L]
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)/abc/(\d+) index.php?menu=movie-tag&tag=$1&sortby=abc&p=$2&lang=en [L]
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)/abc index.php?menu=movie-tag&tag=$1&sortby=abc&lang=en [L]
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)/imdb_rating/(\d+) index.php?menu=movie-tag&tag=$1&sortby=imdb_rating&p=$2&lang=en [L]
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)/imdb_rating index.php?menu=movie-tag&tag=$1&sortby=imdb_rating&lang=en [L]
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)/(\d+)$ index.php?menu=movie-tag&tag=$1&p=$2&lang=en [L]
+RewriteRule ^/?movie-tags/([a-z0-9_\-]+)$ index.php?menu=movie-tag&tag=$1&lang=en [L]
+
+RewriteRule ^/?recommend-shows        index.php?menu=recommend-shows&lang=en [L]
+RewriteRule ^/?recommend-movies        index.php?menu=recommend-movies&lang=en [L]
+
+RewriteRule ^/?favorites        index.php?menu=favorites&lang=en [L]
+RewriteRule ^/?new-shows        index.php?menu=new-shows&lang=en [L]
+RewriteRule ^/?new-movies       index.php?menu=new-movies&lang=en [L]
+
+RewriteRule ^/?show/([a-zA-Z0-9\-]+)/season/([0-9]+)/episode/([0-9]+)$ index.php?menu=episode&perma=$1&season=$2&episode=$3&lang=en [L]
+RewriteRule ^/?show/([a-zA-Z0-9\-]+)/season/([0-9]+)$ index.php?menu=show&perma=$1&season=$2&lang=en [L]
+RewriteRule ^/?show/([a-zA-Z0-9\-]+)$ index.php?menu=show&perma=$1&lang=en [L]
+RewriteRule ^/?movie/([a-z0-9\-]+)\/?$ index.php?menu=watchmovie&perma=$1&lang=en [L]
+
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/abc\/(\d+) index.php?menu=tv-tag&tag=$1&sortby=abc&p=$2&lang=en [L]
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/abc index.php?menu=tv-tag&tag=$1&sortby=abc&lang=en [L]
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/date\/(\d+) index.php?menu=tv-tag&tag=$1&sortby=date&p=$2&lang=en [L]
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/date index.php?menu=tv-tag&tag=$1&sortby=date&lang=en [L]
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/imdb_rating/(\d+) index.php?menu=tv-tag&tag=$1&sortby=imdb_rating&p=$2&lang=en [L]
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/imdb_rating index.php?menu=tv-tag&tag=$1&sortby=imdb_rating&lang=en [L]
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/(\d+)?$ index.php?menu=tv-tag&tag=$1&p=$2&lang=en [L]
+RewriteRule ^/?tv-tags/([a-z0-9_\-]+)\/?$ index.php?menu=tv-tag&tag=$1&lang=en [L]
+
+RewriteRule ^/?tv-shows/(\d+)$ index.php?menu=tv-shows&p=$1&lang=en [L]
+RewriteRule ^/?tv-shows/abc/(\d+)$ index.php?menu=tv-shows&p=$1&sortby=abc&lang=en [L]
+RewriteRule ^/?tv-shows/date/(\d+)$ index.php?menu=tv-shows&p=$1&sortby=date&lang=en [L]
+RewriteRule ^/?tv-shows/imdb_rating/(\d+)$ index.php?menu=tv-shows&p=$1&sortby=imdb_rating&lang=en [L]
+RewriteRule ^/?tv-shows/abc index.php?menu=tv-shows&sortby=abc&lang=en [L]
+RewriteRule ^/?tv-shows/date index.php?menu=tv-shows&sortby=date&lang=en [L]
+RewriteRule ^/?tv-shows/imdb_rating index.php?menu=tv-shows&sortby=imdb_rating&lang=en [L]
+RewriteRule ^/?tv-shows index.php?menu=tv-shows&lang=en [L]
+
+RewriteRule ^/?movies/(\d+)$ index.php?menu=movies&p=$1&sortby=abc&lang=en [L]
+RewriteRule ^/?movies/abc/(\d+)$ index.php?menu=movies&p=$1&sortby=abc&lang=en [L]
+RewriteRule ^/?movies/date/(\d+)$ index.php?menu=movies&p=$1&sortby=date&lang=en [L]
+RewriteRule ^/?movies/imdb_rating/(\d+)$ index.php?menu=movies&p=$1&sortby=imdb_rating&lang=en
+RewriteRule ^/?movies/date index.php?menu=movies&sortby=date&lang=en
+RewriteRule ^/?movies/abc index.php?menu=movies&sortby=abc&lang=en
+RewriteRule ^/?movies/imdb_rating index.php?menu=movies&sortby=imdb_rating&lang=en
+RewriteRule ^/?movies index.php?menu=movies&lang=en [L]
+RewriteRule ^/?requests       index.php?menu=requests&lang=en [L]
+
+###################
+# general routes #
+###################
+
+RewriteRule ^/?plugin/([a-zA-Z0-9\-_]+)/([a-zA-Z0-9\_]+) index.php?menu=plugin&plugin=$1&plugin_menu=$2 [L]
+RewriteRule ^/?pages/([a-z0-9\-]+) index.php?menu=page&permalink=$1 [L]
+RewriteRule ^/?friends        index.php?menu=friends [L]
+RewriteRule ^/?help       index.php?menu=help [L]
+RewriteRule ^/?tv_feed     rss_tv.php [L]
+RewriteRule ^/?movie_feed        rss_movie.php [L]
+RewriteRule ^/?submit     index.php?menu=submit [L]
+
+RewriteRule ^/?tvtag/([a-z0-9_\-]+)\/?$ index.php?menu=tv-tag&tag=$1 [L]
+
+RewriteRule ^/?movietag/([a-z0-9_\-]+)/date index.php?menu=movie-tag&tag=$1&sortby=date [L]
+RewriteRule ^/?movietag/([a-z0-9_\-]+)/abc index.php?menu=movie-tag&tag=$1&sortby=abc [L]
+RewriteRule ^/?movietag/([a-z0-9_\-]+)$ index.php?menu=movie-tag&tag=$1 [L]
+
+RewriteRule ^/?register index.php?menu=register [L]
+RewriteRule ^/?logout index.php?menu=logout [L]
+RewriteRule ^/?login index.php?menu=login [L]
+RewriteRule ^/?home index.php?menu=home [L]
+
+RewriteRule ^/?recommend/shows        index.php?menu=recommend-shows [L]
+RewriteRule ^/?recommend/movies        index.php?menu=recommend-movies [L]
+
+RewriteRule ^/?favorites        index.php?menu=favorites [L]
+RewriteRule ^/?new-shows        index.php?menu=new-shows [L]
+RewriteRule ^/?new-movies       index.php?menu=new-movies [L]
+
+RewriteRule ^/?watch/([a-z0-9\-]+)\/?$ index.php?menu=watchmovie&perma=$1 [L]
+RewriteRule ^/?([a-zA-Z0-9\-]+)/season/([0-9]+)/episode/([0-9]+)$ index.php?menu=episode&perma=$1&season=$2&episode=$3 [L]
+RewriteRule ^/?([a-zA-Z0-9\-]+)/season/([0-9]+)$ index.php?menu=show&perma=$1&season=$2 [L]
+RewriteRule ^/?([a-zA-Z0-9\-]+)/feed$ rss.php?perma=$1 [L]
+RewriteRule ^/?([a-zA-Z0-9\-]+)$ index.php?menu=show&perma=$1 [L]
+
+RewriteRule ^/?user/([A-Za-z0-9\-_]+)\/?$ index.php?menu=user&profile_username=$1 [L]
